@@ -10,7 +10,7 @@ As you develop and deploy your apps in containers, use PX-Lite for elastic stora
 
  * See our quick start guides on installing PX-Lite:
   * [Launching PX-Lite with Docker Compose](https://github.com/portworx/px-lite/blob/master/quick-start/README.md)  
-    * ... OR ...
+     ... OR ...
   * [Detailed instructions for installing and Running PX-Lite on Ubuntu](https://github.com/portworx/px-lite/blob/master/install_run_ubuntu.md) or [Red Hat](https://github.com/portworx/px-lite/blob/master/install_run_rhel.md)
  * Run stateful containers with Docker volumes:
   * [Managing mysql database volumes with PX-Lite](https://github.com/portworx/px-lite/blob/master/examples/mysql.md) 
