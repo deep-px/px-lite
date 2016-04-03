@@ -4,3 +4,4 @@ The following examples illustrate managing data volumes with stateful databases 
  * [Managing mysql database volumes with PX-Lite](https://github.com/portworx/px-lite/blob/master/examples/mysql.md) 
  * [Scaling a Cassandra database with PX-Lite](https://github.com/portworx/px-lite/blob/master/examples/cassandra.md) 
  * [Running the Docker registry with high availability](https://github.com/portworx/px-lite/blob/master/examples/registry.md) 
+ * [Running GlusterFS with px-lite](https://gist.github.com/rodriguise/2c7de2de1e6781e30f51)
