@@ -10,6 +10,6 @@
       "/dev/xvdf",
       "/dev/xvdg"
     ],
-    debug_level="low"
+    "debug_level":"low"
   }
 }
