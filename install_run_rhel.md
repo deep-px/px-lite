@@ -115,7 +115,7 @@ To add  nodes to increase capacity and enable high availability, complete the fo
 * Repeat Steps 1 and 2 in the Prerequisites section.
  * Launch each server with your Operating System and install Docker.
 * Repeat Steps 1 and 2 in the Install Portworx PX-Lite section. 
- * Download the PX-Lite container and install the PX Kernel module on each node.
+ * Download the PX-Lite container on each node.
 * JSON configuration:
  * If you have the same device configuration on every node, then copy the  config.json you created the first time in Step 4 to all the nodes. 
  * If you have different device configurations on the nodes, then repeat Steps 2 and 3 in the Install Portworx PX-Lite section. Use the same clusterid and kvdb on all the nodes. 
