@@ -9,6 +9,7 @@
     "devices": [
       "/dev/xvdf",
       "/dev/xvdg"
-    ]
+    ],
+    debug_level="low"
   }
 }
