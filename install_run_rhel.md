@@ -52,8 +52,6 @@ You only need to do this etcd step once. You can use the same etcd service for m
 
 ### Step 1: Download the PX-Lite container
 From the SSH window for the server:
-* Log in to Docker Hub.
- * ```# sudo docker login -u [user] -p [password]```
 * Pull PX-Lite.
  * ```# sudo docker pull portworx/px-lite```
 
