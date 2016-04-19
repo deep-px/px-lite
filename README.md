@@ -1,4 +1,9 @@
+
 ![logo](http://i.imgur.com/l8JRhxg.jpg)
+
+
+
++[![Docker Pulls](https://img.shields.io/docker/pulls/openstorage/osd.svg)](https://hub.docker.com/r/portworx/px-lite)
 
 # PX-Lite alpha
 PX-Lite is elastic block storage for containers. Deploying PX-Lite on a server with Docker turns that server into a scale-out storage node. Storage runs converged on the same server as compute, giving bare-metal performance. 
