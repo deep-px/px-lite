@@ -1,4 +1,6 @@
 These instructions demonstrate running the official `mysql` container from https://hub.docker.com/_/mysql/.
+### Watch the video
+Here is a 4 minute video that shows setting up a 3 node cluster for mysql and adding more capacity on the fly: https://vimeo.com/163637386
 
 ### Create a storage volume for mysql
 To create a storage volume for mysql, run the following command and note the returned volume ID. You will need the volume ID when you start the mysql container in the next step.
