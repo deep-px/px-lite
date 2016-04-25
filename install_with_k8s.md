@@ -1,8 +1,15 @@
-## Using px-lite with k8s
 
-### Step 1: Run the px-lite container outside of k8s
+# Portworx and Kubernetes
+Portworx PX-Lite is elastic block storage for containers. Deploying PX-Lite on a server with Docker turns that server into a scale-out storage node. This quick guide shows how to use PX-Lite to implement storage for Kubernetes pods. 
 
-Run px-lite container using docker with following command
+Future versions will support launching PX-Lite through Kubernetes. For more on PX-Lite, see our [quick start guides](https://github.com/portworx/px-lite#install-and-quick-start-guides). 
+
+## Using PX-Lite with Kubernetes
+PX-lite pools your servers capacity and is deployed as a container. Here is how to install PX-Lite on each server. We are tracking when shared mounts will be allowed within Kubernetes (K8s), which will allow Kubernetes to deploy PX-Lite. 
+
+### Step 1: Run the PX-Lite container outside of Kubernetes
+
+Run PX-Lite container using docker with following command
 
 ```
 $ docker run --restart=always --name px-lite -d --net=host
@@ -19,12 +26,12 @@ $ docker run --restart=always --name px-lite -d --net=host
 portworx/px-lite:latest
 ```
 
-### Step 2: Install Flexvolume Binary on all k8s nodes
-Flexvolume allows other volume drivers outside of k8s to
+### Step 2: Install Flexvolume Binary on all Kubernetes nodes
+Flexvolume allows other volume drivers outside of Kubernetes to
 attach/detach/mount/unmount custom volumes to pods/daemonsets/rcs
 
 Build the flexvolume in openstorage and create a binary. Copy the
-compiled binary into the kubernetes plugin path on all the k8s nodes
+compiled binary into the Kubernetes plugin path on all the k8s nodes
 ```
 $ cd libopenstorage/openstorage
 $ make
@@ -32,7 +39,7 @@ $ mkdir /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvo
 $ cp ../../../bin/flexvolume /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
 ```
 
-### Step 3: Include PX Flexvolume as a VolumeSpec in k8s spec file
+### Step 3: Include PX Flexvolume as a VolumeSpec in Kubernetes spec file
 
 Under "spec" section of your spec yaml file, add a "volumes" section.
 
@@ -76,14 +83,14 @@ spec:
 
 * Use the same "name" field as used while defining the volume.
 
-### Step 5: Run the k8s cluster in privileged mode.
+### Step 5: Run the Kubernetes cluster in privileged mode.
 
-* In order to share the namespace between the host, px-lite container
-  and your k8s pod instance you need to run the cluster with highest
-  privilege. This can be done by setting the environment variable
+* In order to share the namespace between the host, PX-Lite container
+  and your Kubernetes pod instance you need to run the cluster with 
+  privileges. This can be done by setting the environment variable
   "ALLOW_PRIVILEGED" equal to "true"
-* Share the host path "/var/lib/kubelet" with px-lite container and
-  your pods. The above docker run command for px-lite shares this
+* Share the host path "/var/lib/kubelet" with PX-Lite container and
+  your pods. The above docker run command for PX-Lite shares this
   path. In order to share it within your pod add a new "hostPath" type
   volume and a corresponding volumeMount in your spec file.
 
@@ -101,7 +108,7 @@ spec:
 ```
 
 
-## tl;dr
+## Summary of steps
 
 * Run px-lite container using docker with following command
 
