@@ -30,11 +30,19 @@ portworx/px-lite:latest
 Flexvolume allows other volume drivers outside of Kubernetes to
 attach/detach/mount/unmount custom volumes to pods/daemonsets/rcs
 
-Build the flexvolume in openstorage and create a binary. Copy the
-compiled binary into the Kubernetes plugin path on all the k8s nodes
+You can download the flexvolume binary built for x86_64 arch from [S3](https://s3-us-west-1.amazonaws.com/kubernetes-portworx/flexvolume)
+
+OR
+
+Build the flexvolume binary in openstorage.
 ```
+$ git clone git@github.com:libopenstorage/openstorage.git
 $ cd libopenstorage/openstorage
 $ make
+```
+
+Copy the compiled binary into the Kubernetes plugin path on all the k8s nodes
+```
 $ mkdir /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
 $ cp ../../../bin/flexvolume /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
 ```
