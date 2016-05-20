@@ -43,8 +43,8 @@ $ make
 
 Copy the compiled binary into the Kubernetes plugin path on all the k8s nodes
 ```
-$ mkdir /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
-$ cp ../../../bin/flexvolume /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
+$ mkdir -p /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/
+$ cp ../../../bin/flexvolume /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/
 ```
 
 ### Step 3: Include PX Flexvolume as a VolumeSpec in Kubernetes spec file
@@ -132,6 +132,10 @@ $ docker run --restart=always --name px-lite -d --net=host
 -v /var/cores:/var/cores \
 -v /var/lib/kubelet:/var/lib/kubelet:shared \
 --ipc=host \
+-p 9001:9001 \
+-p 9007:9007 \
+-p 9008:9008 \
+-p 2345:2345 \
 portworx/px-lite:latest
 ```
 
@@ -139,8 +143,8 @@ portworx/px-lite:latest
   nodes
 
 ```
-$ mkdir /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
-$ cp ../../../bin/flexvolume /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/flexvolume
+$ mkdir -p /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/
+$ cp ../../../bin/flexvolume /usr/libexec/kubernetes/kubelet-plugins/volume/exec/px~flexvolume/
 ```
 
 * Start your k8s cluster in privileged mode
